@@ -21,4 +21,17 @@ function cmd_available() {
     console.log(chalk.greenBright(commands));
 }
 
-cmd_available();
+function run_commands(commands:string[]) {
+
+}
+
+
+(async () => {
+    const response = await prompts({
+        type: 'text',
+        name: 'something',
+        message: 'what would you like to do today?',
+
+    });
+
+})();
