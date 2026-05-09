@@ -7,31 +7,28 @@ console.log("Hello World!");
 import chalk from "chalk";
 const prompts = require('prompts');
 
-// -- varibales
-let parmra1:any;
-let commands:string[] = ["Test", "About", "Commands Available"];
-
 // functions
 
+// commands
 function test() {
     console.log("Hello World!");
 }
 
-function cmd_available() {
-    console.log(chalk.greenBright(commands));
-}
 
-function run_commands(commands:string[]) {
-
+// running it
+function run_commands(command:string[]) {
+    if (command === "help") {
+        test();
+    }
 }
 
 
 (async () => {
     const response = await prompts({
         type: 'text',
-        name: 'something',
+        name: 'command',
         message: 'what would you like to do today?',
-
     });
-
+    console.log(response);
+    run_commands(response);
 })();
